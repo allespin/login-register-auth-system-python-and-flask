@@ -171,7 +171,7 @@ Acesse em: [http://localhost:5000](http://localhost:5000)
 | SHA-256 (hashlib) | Hash de senhas e tokens |
 | JSON | Armazenamento de usuários |
 | Jinja2 | Templates HTML |
-| HTML/CSS/JS | Frontend da web interface |
+| HTML/CSS/JS | Front-end da interface web |
 
 ---
 
@@ -284,7 +284,7 @@ Access at: [http://localhost:5000](http://localhost:5000)
 | SHA-256 (hashlib) | Password and token hashing |
 | JSON | User storage |
 | Jinja2 | HTML templates |
-| HTML/CSS/JS | Web interface frontend |
+| HTML/CSS/JS | Front-end web interface |
 
 ---
 
