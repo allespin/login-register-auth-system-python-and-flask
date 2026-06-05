@@ -1,4 +1,4 @@
-#### [PRTUGUESE/ ENGLISH]
+#### [PORTUGUESE/ ENGLISH]
 
 # 🔐 Sistema de Login e Registro de Usuários 
 
