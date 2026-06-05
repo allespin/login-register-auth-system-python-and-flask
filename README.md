@@ -1,6 +1,6 @@
 #### [PORTUGUESE/ ENGLISH]
 
-# 🔐 Sistema de login e registro de usuários 
+# 🔐 Sistema de login e cadastro de usuários 
 
 Sistema de autenticação completo desenvolvido em Python, disponível em versão web app via Flask.
 Permite cadastro de usuários, login e recuperação de senha por token de 8 caracteres.
