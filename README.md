@@ -187,7 +187,7 @@ Acesse em: [http://localhost:5000](http://localhost:5000)
 
 ---
 
-# 🔐 Login & user register system — (English)
+# 🔐 Login & user register system — English
 
 A complete authentication system built in Python, available a web app via Flask.
 Supports user registration, secure login, and password recovery through an 8-character token.
