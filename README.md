@@ -1,6 +1,6 @@
 #### [PORTUGUESE/ ENGLISH]
 
-# 🔐 Sistema de Login e Registro de Usuários 
+# 🔐 Sistema de login e registro de usuários 
 
 Sistema de autenticação completo desenvolvido em Python, disponível em versão web app via Flask.
 Permite cadastro de usuários, login seguro e recuperação de senha por token de 8 caracteres.
@@ -65,12 +65,6 @@ Tela de cadastro // usuário cadastrado com sucesso
 
 ## ✨ Funcionalidades
 
-### 🖥️ CLI (Terminal)
-- Cadastro de usuários com nome, e-mail e senha
-- Login com autenticação segura
-- Senhas armazenadas com hash **SHA-256**
-- Interface CLI colorida com **Colorama**
-- Ícones e separadores visuais para melhor legibilidade
 
 ### 🌐 Web Interface (Flask)
 - Páginas de login, cadastro, recuperação de senha e dashboard
@@ -123,13 +117,7 @@ cd login-register-system
 pip install -r requirements.txt
 ```
 
-### Rodar a versão CLI
-
-```bash
-python sistema_login.py
-```
-
-### Rodar a versão Web
+### Rodando o sistema
 
 ```bash
 python app.py
@@ -181,7 +169,7 @@ Acesse em: [http://localhost:5000](http://localhost:5000)
 
 ---
 
-# 🔐 Login & User Register System — (English)
+# 🔐 Login & user register system — (English)
 
 A complete authentication system built in Python, available a web app via Flask.
 Supports user registration, secure login, and password recovery through an 8-character token.
@@ -191,13 +179,6 @@ The web interface features a terminal-style theme, REST API communication, and a
 ---
 
 ## ✨ Features
-
-### 🖥️ CLI (Terminal)
-- User registration with username, email and password
-- Login with secure authentication
-- Passwords stored as **SHA-256** hashes
-- Colorful interface with **Colorama**
-- Icons and visual separators for better readability
 
 ### 🌐 Web Interface (Flask)
 - Login, register, password recovery and dashboard pages
@@ -250,13 +231,7 @@ cd login-register-system
 pip install -r requirements.txt
 ```
 
-### Run the CLI version
-
-```bash
-python sistema_login.py
-```
-
-### Run the Web version
+### Run the system
 
 ```bash
 python app.py
