@@ -15,7 +15,7 @@ A interface web conta com tema terminal, comunicação via API REST e sessão au
 
 
 ### 1. Tela de login
-Tela de login // usuário não encontrado.
+Tela de login e usuário não encontrado.
 
 <div align="center">
   <table>
@@ -29,7 +29,7 @@ Tela de login // usuário não encontrado.
 ---
 
 ### 2. Tela de cadastro
-Tela de cadastro // usuário cadastrado com sucesso
+Tela de cadastro e usuário cadastrado com sucesso
 
 <div align="center">
   <table>
