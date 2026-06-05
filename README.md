@@ -155,7 +155,7 @@ Acesse em: [http://localhost:5000](http://localhost:5000)
 2. Um token de 8 caracteres é gerado e "enviado" ao e-mail cadastrado
 3. Insira o token para validar e redefinir a senha
 
-> ⚠️ Em produção: o token simula pelo envio do código por serviço de e-mail.
+> ⚠️ Em produção: o token simula o envio do código por serviço de e-mail.
 
 ---
 
