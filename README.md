@@ -9,7 +9,7 @@ A interface web conta com tema terminal, comunicação via API REST e sessão au
 
 
 ## 📸 Preview
-
+### Tela inicial
 <img width="1706" height="816" alt="image" src="https://github.com/user-attachments/assets/73cc7998-1dad-47f7-bd98-895196c934ad" />
 
 
@@ -44,7 +44,7 @@ Tela de cadastro e usuário cadastrado com sucesso
 
 ### 3. Senha incorreta e bloqueio temporário de conta
 
-
+Após o usuário utilizar inserir três vezes uma senha errada sua conta sofre um bloqueio de 30s.
 <div align="center">
   <table>
     <tr>
@@ -129,8 +129,8 @@ login-register-system/
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/login-register-system.git
-cd login-register-system
+git clone https://github.com/allespin/login-register-system-python-and-flask
+cd login-register-system-python-and-flask
 
 # Instale as dependências
 pip install -r requirements.txt
@@ -242,8 +242,8 @@ login-register-system/
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/login-register-system.git
-cd login-register-system
+git clone https://github.com/allespin/login-register-system-python-and-flask
+cd login-register-system-python-and-flask
 
 # Install dependencies
 pip install -r requirements.txt
