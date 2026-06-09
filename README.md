@@ -44,7 +44,7 @@ Tela de cadastro e usuário cadastrado com sucesso
 
 ### 3. Senha incorreta e bloqueio temporário de conta
 
-Após o usuário utilizar inserir três vezes uma senha errada sua conta sofre um bloqueio de 30s.
+Após o usuário inserir três vezes uma senha errada sua conta sofre um bloqueio de 30s.
 <div align="center">
   <table>
     <tr>
