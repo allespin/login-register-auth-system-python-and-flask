@@ -126,7 +126,7 @@ def api_login():
         return jsonify({"ok": False, "msg": f"Conta bloqueada. Tente em {restante}s."})
 
     if verificar_senha(senha, usuario["senha"]):
-        # Migração automática de SHA-256 legado para bcrypt
+        
         if not (usuario["senha"].startswith('$2b$') or usuario["senha"].startswith('$2a$')):
             usuario["senha"] = gerar_hash_senha(senha)
         usuario["tentativas"] = 0
