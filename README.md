@@ -96,7 +96,7 @@ Após o usuário inserir três vezes uma senha errada sua conta sofre um bloquei
 
 ### 🛡️ Segurança
 
-* Aplicação de hash SHA-256 para armazenamento de senhas e tokens
+* Senhas protegidas com bcrypt e salt automático
 * Limite de tentativas de login com bloqueio após 3 erros consecutivos
 * Bloqueio temporário de 30 segundos após exceder o limite de tentativas
 * Recuperação de senha por token gerado aleatoriamente e validado via hash
@@ -179,6 +179,8 @@ Acesse em: [http://localhost:5000](http://localhost:5000)
 | Jinja2              | Renderização de templates HTML                |
 | HTML/CSS/JavaScript | Desenvolvimento da interface web              |
 | API REST            | Comunicação entre frontend e backend          |
+| hashlib (SHA-256)   | Geração e validação de hashes para tokens de recuperação |
+
 
 
 ---
@@ -211,11 +213,11 @@ The interface was designed with a terminal-inspired aesthetic, combining a disti
 - Responsive and fully functional design
 
 ### 🛡️ Security
-- **SHA-256 hashing** on all passwords and tokens
+- **Password protection using bcrypt with automatic salting
 - **Login attempt limit** — account locked after 3 consecutive failures
 - **Temporary lockout** of 30 seconds after exceeding the limit
 - **Token-based password recovery** — randomly generated and validated via hash
-- Token invalidated after use
+- **Token invalidated after use
 
 ---
 
@@ -295,6 +297,7 @@ Access at: [http://localhost:5000](http://localhost:5000)
 | Jinja2              | HTML templating engine                         |
 | HTML/CSS/JavaScript | Front-end interface                            |
 | REST API            | Communication between frontend and backend     |
+| hashlib (SHA-256)   | Hash generation and validation for password recovery tokens |
 
 
 ---
