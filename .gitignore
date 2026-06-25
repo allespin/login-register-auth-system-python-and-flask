@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+tempCodeRunnerFile.py
+usuarios.json
+.vscode/
+.idea/

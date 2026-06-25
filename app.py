@@ -5,6 +5,7 @@ import hashlib
 import random
 import string
 import time
+import bcrypt
 
 app = Flask(__name__)
 app.secret_key = "chave_secreta_de_sistema"
@@ -23,8 +24,20 @@ def salvar_usuarios(usuarios):
     with open(ARQUIVO_USUARIOS, "w") as f:
         json.dump(usuarios, f, indent=4)
 
-def hash_senha(senha):
-    return hashlib.sha256(senha.encode()).hexdigest()
+def hash_sha256(texto):
+    return hashlib.sha256(texto.encode()).hexdigest()
+
+def gerar_hash_senha(senha):
+    salt = bcrypt.gensalt()
+    return bcrypt.hashpw(senha.encode('utf-8'), salt).decode('utf-8')
+
+def verificar_senha(senha_fornecida, senha_armazenada):
+    if senha_armazenada.startswith('$2b$') or senha_armazenada.startswith('$2a$'):
+        try:
+            return bcrypt.checkpw(senha_fornecida.encode('utf-8'), senha_armazenada.encode('utf-8'))
+        except Exception:
+            return False
+    return hash_sha256(senha_fornecida) == senha_armazenada
 
 def gerar_token(tamanho=8):
     return ''.join(random.choices(string.ascii_uppercase + string.digits, k=tamanho))
@@ -84,7 +97,7 @@ def api_cadastrar():
         return jsonify({"ok": False, "msg": "As senhas não coincidem."})
 
     usuarios[nome] = {
-        "senha": hash_senha(senha),
+        "senha": gerar_hash_senha(senha),
         "email": email,
         "tentativas": 0,
         "bloqueado_ate": 0,
@@ -112,7 +125,10 @@ def api_login():
         restante = int(usuario["bloqueado_ate"] - agora)
         return jsonify({"ok": False, "msg": f"Conta bloqueada. Tente em {restante}s."})
 
-    if usuario["senha"] == hash_senha(senha):
+    if verificar_senha(senha, usuario["senha"]):
+        # Migração automática de SHA-256 legado para bcrypt
+        if not (usuario["senha"].startswith('$2b$') or usuario["senha"].startswith('$2a$')):
+            usuario["senha"] = gerar_hash_senha(senha)
         usuario["tentativas"] = 0
         usuario["bloqueado_ate"] = 0
         salvar_usuarios(usuarios)
@@ -143,7 +159,7 @@ def api_recuperar_solicitar():
         return jsonify({"ok": False, "msg": "Usuário não encontrado."})
 
     token = gerar_token()
-    usuarios[nome]["token_recuperacao"] = hash_senha(token)
+    usuarios[nome]["token_recuperacao"] = hash_sha256(token)
     salvar_usuarios(usuarios)
 
     email = usuarios[nome]["email"]
@@ -164,13 +180,13 @@ def api_recuperar_confirmar():
     if nome not in usuarios:
         return jsonify({"ok": False, "msg": "Usuário não encontrado."})
 
-    if usuarios[nome].get("token_recuperacao") != hash_senha(token):
+    if usuarios[nome].get("token_recuperacao") != hash_sha256(token):
         return jsonify({"ok": False, "msg": "Token inválido."})
 
     if nova_senha != confirmacao:
         return jsonify({"ok": False, "msg": "As senhas não coincidem."})
 
-    usuarios[nome]["senha"] = hash_senha(nova_senha)
+    usuarios[nome]["senha"] = gerar_hash_senha(nova_senha)
     usuarios[nome]["token_recuperacao"] = None
     usuarios[nome]["tentativas"] = 0
     usuarios[nome]["bloqueado_ate"] = 0
